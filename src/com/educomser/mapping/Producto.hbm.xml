@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.educomser.entity.Producto" table="producto">
+        <id name="cod_producto" column="cod_producto">
+            <generator class="identity"/>
+        </id>        
+        <property name="nombre" column="nombre" length="200" not-null="true"/>
+        <property name="costo" />
+        <property name="stock_max" />
+        <property name="stock_min" />
+  
+    </class>
+
+
+</hibernate-mapping>
