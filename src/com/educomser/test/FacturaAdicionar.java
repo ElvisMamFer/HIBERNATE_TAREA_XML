@@ -8,21 +8,20 @@ import com.educomser.entity.dao.impl.FacturaDaoImpl;
 import com.educomser.util.HibernateUtil;
 import java.util.Date;
 
-public class FacturadoAdicionar {
+public class FacturaAdicionar {
 
     public static void main(String[] args) {
-          Factura f=new Factura();
-        f.setNit_ci("123");
+        Factura f=new Factura();
+        f.setNit_ci("999");
         f.setFecha_factura(new Date());
-        f.setCantidad_total(123);
+        f.setCantidad_total(44);
        
          
         System.out.println(f);
         //Creamos el Dao
         FacturaDao perDao=new FacturaDaoImpl();
         perDao.create(f);
-        
-        //Esta funcion solo usamos en aplicaciones de escritorio
+                //Esta funcion solo usamos en aplicaciones de escritorio
         HibernateUtil.closeSessionFactory();
     }
     

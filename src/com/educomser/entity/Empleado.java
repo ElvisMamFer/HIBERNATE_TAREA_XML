@@ -3,13 +3,14 @@ package com.educomser.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Empleado implements Serializable{
- private int cod_empleado;
- private  String nombre;
- private  String ap_paterno;
- private String ap_materno;
- private Date fecha_nac;
- private String  direccion;
+public class Empleado implements Serializable {
+
+    private int cod_empleado;
+    private String nombre;
+    private String ap_paterno;
+    private String ap_materno;
+    private Date fecha_nac;
+    private String direccion;
 
     public Empleado() {
     }
@@ -66,7 +67,5 @@ public class Empleado implements Serializable{
     public String toString() {
         return "Empleado{" + "cod_empleado=" + cod_empleado + ", nombre=" + nombre + ", ap_paterno=" + ap_paterno + ", ap_materno=" + ap_materno + ", fecha_nac=" + fecha_nac + ", direccion=" + direccion + '}';
     }
- 
-   
- 
+
 }

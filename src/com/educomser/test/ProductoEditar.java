@@ -1,14 +1,14 @@
 package com.educomser.test;
 
-import com.educomser.entity.Empleado;
+import com.educomser.entity.Producto;
 
-import com.educomser.entity.dao.impl.EmpleadoDaoImpl;
+import com.educomser.entity.dao.impl.ProductoDaoImpl;
 import com.educomser.util.HibernateUtil;
-import java.text.SimpleDateFormat;
+
 import java.util.Scanner;
 
 
-public class EmpleadoEditar {
+public class ProductoEditar {
 
    
     public static void main(String[] args) {
@@ -17,19 +17,19 @@ public class EmpleadoEditar {
         
          Scanner in=new Scanner(System.in);
         
-        System.out.println("-- EDITAR PERSONA --");
-        System.out.print("Ingrese el Id de la persona a Editar: ");
+        System.out.println("-- EDITAR PRODCUTO --");
+        System.out.print("Ingrese el Id del producto a Editar: ");
         int id=in.nextInt();
         
         //Instanciamos la clase de acceso a datos
-        EmpleadoDaoImpl EmpDao=new EmpleadoDaoImpl();        
-        Empleado Emp=EmpDao.findById(id);
+        ProductoDaoImpl EmpDao=new ProductoDaoImpl();        
+        Producto Emp=EmpDao.findById(id);
         
         if(Emp!=null)
         {
-            SimpleDateFormat df=new SimpleDateFormat("dd/MM/yyyy");
+           
             System.out.println(Emp);
-              System.out.print("¿Desea Modificar?");
+            System.out.print("¿Desea Modificar?");
             String resp=in.next().toUpperCase();
           
             if(resp.contains("S"))

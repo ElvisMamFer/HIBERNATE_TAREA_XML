@@ -21,7 +21,7 @@ public class PersonaAdicionar {
 
         //Creamos el objeto
         Persona p=new Persona();
-        p.setNombre("Juan");
+        p.setNombre("Santos");
         p.setSueldo(5000);
         p.setContrato(true);
         p.setFechaNacimiento(new Date());

@@ -2,13 +2,13 @@ package com.educomser.entity;
 
 import java.io.Serializable;
 
-public class Producto implements Serializable
-{
-     private int  cod_producto;
-     private String nombre;
-     private double costo;
-     private  int stock_max;
-     private  int stock_min;
+public class Producto implements Serializable {
+
+    private int cod_producto;
+    private String nombre;
+    private double costo;
+    private int stock_max;
+    private int stock_min;
 
     public Producto() {
     }
@@ -57,6 +57,5 @@ public class Producto implements Serializable
     public String toString() {
         return "Producto{" + "cod_producto=" + cod_producto + ", nombre=" + nombre + ", costo=" + costo + ", stock_max=" + stock_max + ", stock_min=" + stock_min + '}';
     }
-     
-     
+
 }

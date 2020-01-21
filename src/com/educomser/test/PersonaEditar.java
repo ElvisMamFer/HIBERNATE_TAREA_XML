@@ -21,33 +21,38 @@ public class PersonaEditar {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
-        
-         Scanner in =new Scanner(System.in);
-        System.out.println("editar");
-        System.out.println("editar");
-        int id =in.nextInt();
-        PersonaDao perDao=new PersonaDaoImpl();
-        Persona per=perDao.findById(id);
-        if (per!=null) {
-            SimpleDateFormat df =new SimpleDateFormat("dd/MM/yyyy");
-            System.out.println("ID:"+per.getId());
-            System.out.println("ID:"+per.getNombre());
-            System.out.println("ID:"+per.getSueldo());
-            System.out.println("ID:"+(per.isContrato()?"SI":"NO"));
-            System.out.println("fecha nac" +df.format(per.getFechaNacimiento()));
-            
-            System.out.println("desea modificar el nombre ? s/n:");
-            String ressp=in.next();
-            if (ressp.equals("s")) {
-                System.out.println("iNGREASA EL NUEVO NOMBRE");
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("==== EDITAR ===");
+        System.out.print("Cod: Persona");
+        int id = in.nextInt();
+
+        PersonaDao perDao = new PersonaDaoImpl();
+        Persona p = perDao.findById(id);
+
+        if (p != null) {
+            SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+
+            System.out.println("ID: " + p.getId());
+            System.out.println("NOMBRE: " + p.getNombre());
+            System.out.println("SUELDO: " + p.getSueldo());
+            System.out.println("CONTRATO : " + (p.isContrato() ? "SI" : "NO"));
+
+            System.out.println("Desea modificar el nombre ? s/n: ");
+            String resp = in.next();
+            if (resp.equals("s")) {
                 
-                //per.setNombre(in.next());
-            } else {
+                System.out.print("INGRESE EL NUEVO NOMBRE :");
+                p.setNombre(in.next());
             }
+            perDao.update(p);
+
+            System.out.println("Ha finalizado la edicion.");
         } else {
+            System.out.println("EL ID no existe.");
         }
-        
+
     }
-    
+
 }
